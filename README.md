@@ -1,69 +1,80 @@
-# MCP Python Server & Database Integration Project
+# 🚀 MCP Server & Database Integration using Python
 
-## Overview
-
-This project demonstrates a Python-based MCP (Model Context Protocol) server integrated with a local SQLite database. The server exposes database operations as MCP tools, and a Python client communicates with the server to access these tools.
+A Python-based **Model Context Protocol (MCP)** server built using **FastMCP** that exposes database operations as MCP tools. The project integrates a local SQLite database and demonstrates how AI clients such as **Claude Desktop** and a custom **Python client** can interact with backend services through MCP.
 
 ---
 
-## Technologies Used
+## 📌 Project Overview
 
-- Python
-- FastMCP
-- SQLite
-- MCP Python SDK
-- VS Code
+This project was developed as part of my internship to understand and implement the **Model Context Protocol (MCP)**.
 
----
+The server exposes database operations through MCP tools, allowing AI applications and clients to interact with a structured SQLite database.
 
-## Project Structure
+The project demonstrates:
 
-mcp-intern-project/
-│
-├── server.py
-├── client.py
-├── db.py
-├── seed.py
-├── database.db
-├── requirements.txt
-├── README.md
-├── test_db.py
-└── test_cases.txt
+- Building an MCP server using FastMCP
+- Integrating a SQLite database with multiple tables
+- Exposing database operations as MCP tools
+- Connecting through a Python client
+- Integrating with Claude Desktop
+- Automated testing using pytest
 
 ---
 
-## Features
+## ✨ Features
 
-- MCP server implementation
-- SQLite database integration
-- Database-backed MCP tools
-- Python MCP client
-- Error handling
-- Logging
-- Tool testing using MCP Inspector
-
----
-
-## Database Tools
-
-### 1. get_all_users()
-
-Returns all users from the database.
-
-### 2. get_user(user_id)
-
-Returns a single user using ID.
-
-### 3. search_user(name)
-
-Searches users by name.
+- ✅ Python-based MCP Server using FastMCP
+- ✅ SQLite Database Integration
+- ✅ Users, Products and Orders Database
+- ✅ CRUD Operations
+- ✅ Search Functionality
+- ✅ Parameterized SQL Queries
+- ✅ Structured JSON Responses
+- ✅ Logging
+- ✅ Python MCP Client
+- ✅ Claude Desktop Integration
+- ✅ Automated Testing using pytest
 
 ---
 
-## Setup Instructions
+## 🛠 Tech Stack
 
-### 1. Create Virtual Environment
+| Technology     | Purpose                 |
+| -------------- | ----------------------- |
+| Python 3.13    | Programming Language    |
+| FastMCP        | MCP Server Framework    |
+| SQLite         | Local Database          |
+| pytest         | Automated Testing       |
+| Claude Desktop | MCP Client              |
+| MCP Inspector  | Tool Testing            |
+| VS Code        | Development Environment |
 
-```bash
-python -m venv venv
+---
+
+## 🏗 System Architecture
+
+```text
+                 Claude Desktop
+                       │
+                       │
+                (MCP Tool Calls)
+                       │
+                       ▼
+            ┌─────────────────────┐
+            │    FastMCP Server   │
+            │      server.py      │
+            └─────────────────────┘
+                  │         │
+                  ▼         ▼
+             MCP Tools   Logging
+                  │
+                  ▼
+             Database Layer
+                 db.py
+                  │
+                  ▼
+            SQLite Database
+      (Users • Products • Orders)
 ```
+
+---
