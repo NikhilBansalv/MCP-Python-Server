@@ -78,3 +78,194 @@ The project demonstrates:
 ```
 
 ---
+
+## 📂 Project Structure
+
+```text
+mcp-python-server/
+│
+├── client.py              # Python MCP client
+├── server.py              # FastMCP server exposing database tools
+├── db.py                  # Database access layer
+├── seed.py                # Creates and seeds the SQLite database
+├── requirements.txt
+├── pytest.ini
+├── README.md
+│
+├── tests/
+│   ├── test_db.py         # Database tests
+│   └── test_tools.py      # MCP tool tests
+│
+└── .gitignore
+```
+
+---
+
+## 🗄 Database Schema
+
+The project uses a **SQLite** database consisting of three tables.
+
+### Users
+
+| Column | Type    |
+| ------ | ------- |
+| id     | INTEGER |
+| name   | TEXT    |
+| email  | TEXT    |
+
+### Products
+
+| Column   | Type    |
+| -------- | ------- |
+| id       | INTEGER |
+| name     | TEXT    |
+| category | TEXT    |
+| price    | REAL    |
+| stock    | INTEGER |
+
+### Orders
+
+| Column     | Type    |
+| ---------- | ------- |
+| id         | INTEGER |
+| user_id    | INTEGER |
+| product_id | INTEGER |
+| quantity   | INTEGER |
+| order_date | TEXT    |
+
+---
+
+## 🔧 MCP Tools
+
+### User Tools
+
+| Tool          | Description           |
+| ------------- | --------------------- |
+| get_all_users | Retrieve all users    |
+| get_user      | Retrieve a user by ID |
+| search_user   | Search users by name  |
+| add_user      | Add a new user        |
+| remove_user   | Delete a user         |
+
+---
+
+### Product Tools
+
+| Tool             | Description              |
+| ---------------- | ------------------------ |
+| get_all_products | Retrieve all products    |
+| get_product      | Retrieve a product by ID |
+| search_product   | Search products          |
+
+---
+
+### Order Tools
+
+| Tool           | Description         |
+| -------------- | ------------------- |
+| get_all_orders | Retrieve all orders |
+
+---
+
+## 🚀 Installation & Setup
+
+Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/mcp-python-server.git
+
+cd mcp-python-server
+```
+
+Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+Activate the environment
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Generate the SQLite database
+
+```bash
+python seed.py
+```
+
+---
+
+## ▶ Running the Project
+
+### Start the MCP Server
+
+```bash
+mcp dev server.py
+```
+
+### Run the Python Client
+
+```bash
+python client.py
+```
+
+### Execute Tests
+
+```bash
+pytest
+```
+
+Expected Output
+
+```text
+===========================
+10 passed
+===========================
+```
+
+---
+
+## 🤖 Claude Desktop Integration
+
+The MCP server can be integrated with Claude Desktop using the MCP configuration file.
+
+Once configured, Claude Desktop can directly invoke the available MCP tools.
+
+Example prompts:
+
+- Show all users.
+- List all products.
+- Search for Laptop.
+- Show all orders.
+- Create a new user.
+
+---
+
+## 🧪 Testing
+
+Automated testing was implemented using **pytest**.
+
+The test suite validates:
+
+- Database operations
+- CRUD functionality
+- Search operations
+- Invalid user handling
+- Invalid product handling
+- MCP tool responses
+
+Current Status
+
+✅ 10 Tests Passed
+
+---
+
+## 📷 Screenshots
