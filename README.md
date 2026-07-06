@@ -233,6 +233,32 @@ Expected Output
 
 ---
 
+## 📸 Screenshots
+
+### MCP Inspector
+
+![MCP Inspector](screenshots/mcp-inspector.png)
+
+---
+
+### Claude Desktop Integration
+
+![Claude Desktop](screenshots/claude-desktop.png)
+
+---
+
+### Python Client
+
+![Python Client](screenshots/python-client.png)
+
+---
+
+### Automated Testing
+
+![Pytest](screenshots/pytest.png)
+
+---
+
 ## 🤖 Claude Desktop Integration
 
 The MCP server can be integrated with Claude Desktop using the MCP configuration file.
@@ -267,5 +293,3 @@ Current Status
 ✅ 10 Tests Passed
 
 ---
-
-## 📷 Screenshots
